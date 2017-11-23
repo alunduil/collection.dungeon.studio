@@ -1,0 +1,15 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', '.' ]
+    id: 'earthdawn.static.dungeon.studio'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'tag', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$BRANCH_NAME' ]
+    waitFor: [ 'earthdawn.static.dungeon.studio' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'tag', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$COMMIT_SHA' ]
+    waitFor: [ 'earthdawn.static.dungeon.studio' ]
+
+images:
+  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio'
+  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$BRANCH_NAME'
+  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$COMMIT_SHA'
