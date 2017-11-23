@@ -5,6 +5,4 @@ ENV COLLECTION_SERVER_RESOURCE_PATH /resources
 
 COPY resources /resources
 
-# Thanks Heroku ...
-ENTRYPOINT []
-CMD [ "/collection-server" ]
+CMD [ "Thanks Heroku!" ]
