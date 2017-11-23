@@ -1,0 +1,5 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', '.' ]
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: [ 'app', 'deploy', '--image-url=gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', '--version=$COMMIT_SHA', 'app.master.yaml' ]
