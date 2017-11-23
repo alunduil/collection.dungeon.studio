@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  earthdawn.static.dungeon.studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dungeon-studio/earthdawn.static.dungeon.studio:latest
+    networks:
+      - dungeon-studio
+    ports:
+      - "80"
+
+networks:
+  dungeon-studio:
