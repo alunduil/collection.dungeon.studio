@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-f', 'Dockerfile', '-t', 'registry.heroku.com/r-earthdawn-static-ds/earthdawn.static.dungeon.studio', '.' ]
+    args: [ 'build', '-f', 'Dockerfile', '-t', 'registry.heroku.com/r-earthdawn-static-ds/web', '.' ]
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'login', '--username=_', '--password=882f582c-04ce-4793-89df-2bcda53de983', 'registry.heroku.com' ]
 
-  - name: 'gcr.io/cloud-buiders/docker'
-    args: [ 'push', 'registry.heroku.com/r-earthdawn-static-ds/earthdawn.static.dungeon.studio' ]
+images:
+  - 'registry.heroku.com/r-earthdawn-static-ds/web'
