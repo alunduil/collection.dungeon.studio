@@ -3,7 +3,7 @@ steps:
     args: [ 'build', '-f', 'Dockerfile', '-t', 'registry.heroku.com/d-earthdawn-static-ds/web', '.' ]
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'login', '--username=_', '--password=882f582c-04ce-4793-89df-2bcda53de983', 'registry.heroku.com' ]
+    args: [ 'login', '--username=_', '--password=d6f58e2e-95c6-4de8-836c-ad5fec3b49d7', 'registry.heroku.com' ]
 
 images:
   - 'registry.heroku.com/d-earthdawn-static-ds/web'
