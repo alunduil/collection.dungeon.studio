@@ -10,6 +10,6 @@ steps:
     args: [ 'push', 'registry.heroku.com/d-earthdawn-static-ds/earthdawn.static.dungeon.studio' ]
 
 secrets:
-  - heroku: projects/dungeon-studio/locations/global/keyRings/heroku/cryptoKeys/alunduil-heroku-alunduil-com
+  - kmsKeyName: projects/dungeon-studio/locations/global/keyRings/heroku/cryptoKeys/alunduil-heroku-alunduil-com
     secretEnv:
       HEROKU_API_TOKEN: CiQAoxHp8BCb8kSsswWaizSpqLg8lozLrnsbCGcF5SU2CPElyk8STQAwZG2USjTSSoy+IDwQJk3/5oVjVtTVHUhyKfa6QUFL8CMa3irdabrBdSjMXswFSV5NnXtMORj+VXaizqWsn/Ntlcq0TGKmeLQyt646
