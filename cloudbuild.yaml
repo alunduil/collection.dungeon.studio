@@ -1,15 +1,15 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', '.' ]
-    id: 'earthdawn.static.dungeon.studio'
+    args: [ 'build', '-f', 'Dockerfile', '-t', 'gcr.io/$PROJECT_ID/collection.dungeon.studio', '.' ]
+    id: 'collection.dungeon.studio'
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'tag', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$BRANCH_NAME' ]
-    waitFor: [ 'earthdawn.static.dungeon.studio' ]
+    args: [ 'tag', 'gcr.io/$PROJECT_ID/collection.dungeon.studio', 'gcr.io/$PROJECT_ID/collection.dungeon.studio:$BRANCH_NAME' ]
+    waitFor: [ 'collection.dungeon.studio' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'tag', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio', 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$COMMIT_SHA' ]
-    waitFor: [ 'earthdawn.static.dungeon.studio' ]
+    args: [ 'tag', 'gcr.io/$PROJECT_ID/collection.dungeon.studio', 'gcr.io/$PROJECT_ID/collection.dungeon.studio:$COMMIT_SHA' ]
+    waitFor: [ 'collection.dungeon.studio' ]
 
 images:
-  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio'
-  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$BRANCH_NAME'
-  - 'gcr.io/$PROJECT_ID/earthdawn.static.dungeon.studio:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/collection.dungeon.studio'
+  - 'gcr.io/$PROJECT_ID/collection.dungeon.studio:$BRANCH_NAME'
+  - 'gcr.io/$PROJECT_ID/collection.dungeon.studio:$COMMIT_SHA'
