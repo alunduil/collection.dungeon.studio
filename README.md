@@ -7,7 +7,7 @@ HTTP using [collection-server].
 
 # Getting Started
 
-The resources are hosted at <http://earthdawn.static.dungeon.studio>.
+The resources are hosted at <http://collection.dungeon.studio>.
 
 # Reporting Issues
 
@@ -27,4 +27,4 @@ attribution; please, add yourself to the `COPYRIGHT` file.
 
 [collection-server]: https://github.com/alunduil/collection-server
 [git flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[issues]: https://github.com/alunduil/earthdawn.static.dungeon.studio/issues
+[issues]: https://github.com/alunduil/collection.dungeon.studio/issues
